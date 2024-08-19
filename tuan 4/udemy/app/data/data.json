@@ -1,0 +1,46 @@
+{
+    "websiteInfos": [
+      {
+        "id": "2",
+        "title": "khoa 2",
+        "description": "khoa 2 ",
+        "contactEmail": "khoa2@gmail.com",
+        "teacher": "giao vien 2"
+      },
+      {
+        "id": "3",
+        "title": "khoa 3",
+        "description": "khoa 3",
+        "contactEmail": "khoa3@gmail.com",
+        "teacher": "giao vien 3"
+      },
+      {
+        "id": "4",
+        "title": "Khoa 4",
+        "description": "khoa 4",
+        "contactEmail": "khoa4@gmail.com",
+        "teacher": "giao vien 4"
+      },
+      {
+        "id": "5",
+        "title": "Khóa 5",
+        "description": "khóa 5",
+        "contactEmail": "khoa5@gmail.com",
+        "teacher": "giao vien 5"
+      },
+      {
+        "id": "6",
+        "title": "Khóa 6",
+        "description": "khoa 6",
+        "contactEmail": "khoa6@ptit.edu.vn",
+        "teacher": "giao vien 6"
+      },
+      {
+        "id": "7",
+        "title": "Khóa 7",
+        "description": "khoa 7",
+        "contactEmail": "khoa7@gmail.com",
+        "teacher": "giao vien 7"
+      }
+    ]
+  }
