@@ -3,6 +3,7 @@ import CourseCarousel  from "./../components/CourseCard";
 import "./globals.css";
 import Hello from "../components/Hello";
 import CourseListTV from "../components/CourseListTV";
+import Slideshows from "../components/Slideshows";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -13,6 +14,7 @@ export default function RootLayout({
       <body>
         <Navbar/>
         <Hello/>
+        <Slideshows/>
         <CourseCarousel  />
         <CourseListTV/>
         <main>{children}</main>

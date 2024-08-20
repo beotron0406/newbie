@@ -235,7 +235,7 @@ const Navbar: React.FC = () => {
     {
       key: "2",
       label: "Đăng xuất",
-      onClick: ()=> handleLogout,
+      onClick: () => handleLogout,
     },
   ];
 
@@ -268,20 +268,22 @@ const Navbar: React.FC = () => {
             </div>
           </Dropdown>
           <div className="flex justify-center items-center">
-            <Input
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Tìm kiếm nội dung bất kỳ"
-              className="rounded-full text-bold px-4 py-2 w-[500px] border-current"
-              suffix={
+            <div className="relative">
+              <input
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder="Tìm kiếm nội dung bất kỳ"
+                className="rounded-full pl-10 pr-4 py-2 w-[550px] border-2 border-gray-400 bg-gray-100 placeholder-gray-600 focus:outline-none"
+              />
+              <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
                 <Button
-                  onClick={()=>handleSearch}
+                  onClick={() => handleSearch}
                   disabled={!searchValue.trim()}
                   type="text"
                   icon={<SearchOutlined />}
                 />
-              }
-            />
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex items-center space-x-4">

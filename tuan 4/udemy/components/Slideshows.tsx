@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+"use client";
+import React, { useState } from "react";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 interface Slide {
-  
   imageUrl: string;
 }
 
 const slides: Slide[] = [
   {
-    imageUrl: "/study1.jpg"  
+    imageUrl: "/study1.jpg",
   },
   {
-    imageUrl: "/study1.jpg"  
+    imageUrl: "/study2.jpg",
   },
   {
-    imageUrl: "/study1.jpg"  
+    imageUrl: "/study3.jpg",
   },
   {
-    imageUrl: "/study1.jpg"  
+    imageUrl: "/study4.jpg",
   },
-
+  {
+    imageUrl: "/study5.jpg",
+  },
+  {
+    imageUrl: "/study6.jpg",
+  },
 ];
 
 const Slideshows: React.FC = () => {
@@ -34,26 +39,22 @@ const Slideshows: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[400px] bg-[#40E0D0] overflow-hidden">
-      <div className="absolute inset-0 flex items-center">
-        <div className="w-1/2 p-8">
-          
-        </div>
-        <div className="w-1/2">
-          <img src={slides[currentSlide].imageUrl} alt="Slide" className="w-full h-auto" />
-        </div>
-      </div>
+    <div className="relative w-full max-w-6xl mx-auto h-[400px] overflow-hidden rounded-lg">
+      <div 
+        className="w-full h-full bg-cover bg-center transition-all duration-500 ease-in-out"
+        style={{ backgroundImage: `url(${slides[currentSlide].imageUrl})` }}
+      />
       <button 
         onClick={prevSlide} 
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-all"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-4 hover:bg-opacity-75 transition-all"
       >
-        <LeftOutlined />
+        <LeftOutlined className="text-2xl" />
       </button>
       <button 
         onClick={nextSlide} 
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-all"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-4 hover:bg-opacity-75 transition-all"
       >
-        <RightOutlined />
+        <RightOutlined className="text-2xl" />
       </button>
     </div>
   );
