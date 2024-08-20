@@ -104,7 +104,7 @@ const UserHomePage = () => {
               <div className="flex justify-between mt-4">
                 {!isFirstPage && (
                   <button
-                    onClick={handlePrev}
+                    onClick={()=>handlePrev}
                     className="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 rounded-full focus:outline-none transition duration-300 ease-in-out hover:opacity-70"
                   >
                     <LeftCircleFilled className="text-4xl text-black" />
@@ -112,7 +112,7 @@ const UserHomePage = () => {
                 )}
                 {!isLastPage && (
                   <button
-                    onClick={handleNext}
+                    onClick={()=>handleNext}
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 rounded-full focus:outline-none ml-auto transition duration-300 ease-in-out hover:opacity-70"
                   >
                     <RightCircleFilled className="text-4xl text-black" />

@@ -235,7 +235,7 @@ const Navbar: React.FC = () => {
     {
       key: "2",
       label: "Đăng xuất",
-      onClick: handleLogout,
+      onClick: ()=> handleLogout,
     },
   ];
 
@@ -275,7 +275,7 @@ const Navbar: React.FC = () => {
               className="rounded-full text-bold px-4 py-2 w-[500px] border-current"
               suffix={
                 <Button
-                  onClick={handleSearch}
+                  onClick={()=>handleSearch}
                   disabled={!searchValue.trim()}
                   type="text"
                   icon={<SearchOutlined />}
