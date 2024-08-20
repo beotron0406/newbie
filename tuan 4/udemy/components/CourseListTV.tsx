@@ -25,7 +25,6 @@ const CourseCard: React.FC<CourseCardProps> = ({
   const formattedPrice = new Intl.NumberFormat("vi-VN").format(price);
 
   return (
-    
     <Card className="w-ful border-white cursor-pointer ">
       <div className="flex items-start space-x-3">
         <div className="w-10 h-10 flex-shrink-0">
@@ -41,8 +40,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <h3 className="text-sm font-semibold mb-1 truncate">{title}</h3>
           <p className="text-xs text-gray-500 mb-1 truncate">{author}</p>
           <div className="flex items-center mb-1">
-            <span className="text-sm font-bold mr-1">{rating.toFixed(1)}</span>
-            <Rate allowHalf disabled defaultValue={rating} className=" text-amber-600 text-xs" />
+            <span className="text-gray-800 font-bold text-sm mr-1">
+              {rating.toFixed(1)}
+            </span>
+            <Rate
+              allowHalf
+              disabled
+              defaultValue={rating}
+              className="text-amber-600 text-xs"
+            />
             <span className="text-xs text-gray-500 ml-1">({reviewCount})</span>
           </div>
           <p className="text-sm font-bold">₫{formattedPrice}</p>
@@ -62,7 +68,7 @@ const CourseListTV: React.FC = () => {
     {
       title: "Javascript cho người mới bắt đầu",
       author: "Hau Nguyen",
-      rating: 4.4,
+      rating: 4.6,
       reviewCount: 464,
       price: 1299000,
       imageUrl: "/study1.jpg",
@@ -71,7 +77,7 @@ const CourseListTV: React.FC = () => {
     {
       title: "Javascript cho người mới bắt đầu",
       author: "Hau Nguyen",
-      rating: 4.4,
+      rating: 4.5,
       reviewCount: 464,
       price: 1299000,
       imageUrl: "/study1.jpg",

@@ -12,7 +12,7 @@ import {
   UserOutlined,
   CrownOutlined,
 } from "@ant-design/icons";
-import { Button, Dropdown, Input, MenuProps, Space } from "antd";
+import { Button, Dropdown, Input, MenuProps, Space, Tooltip } from "antd";
 
 const categoryItems: MenuProps["items"] = [
   {
@@ -387,57 +387,36 @@ const Navbar: React.FC = () => {
           )}
         </div>
       </nav>
-      {/* <div className="flex justify-center space-x-8 px-4 py-3 bg-white border-b">
+
+      <div className="relative flex justify-between px-10 py-3 bg-white border-b">
         {categories.map((category) => (
-          <Dropdown
-            key={category.name}
-            menu={{
-              items: category.subCategories?.map((sub, index) => ({
-                key: index,
-                label: (
-                  <Link
-                    href={`/${category.name.toLowerCase()}/${sub.toLowerCase()}`}
-                  >
-                    <span className="text-sm text-white hover:text-blue-500 block py-2 px-4">
-                      {sub}
-                    </span>
-                  </Link>
-                ),
-              })),
-            }}
-            trigger={["hover"]}
-            placement="bottom"
-            overlayClassName="custom-dropdown"
-          >
-            <Link href={`/${category.name.toLowerCase()}`}>
+          <div key={category.name} className="group relative">
+            <Tooltip
+              title={
+                <div className="bg-black text-white py-3 px-4 fixed inset-x-0 bottom w-screen">
+                  <ul className="flex justify-between">
+                    {category.subCategories?.map((sub, index) => (
+                      <li key={index} className="px-2">
+                        <Link
+                          href={`/${category.name.toLowerCase()}/${sub.toLowerCase()}`}
+                        >
+                          <span className="block px-1 py-1 hover:text-blue-500 transition-colors">
+                            {sub}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              }
+              placement="bottom"
+              trigger="hover"
+              className="z-50"
+            >
               <span className="text-sm font-semibold text-gray-700 hover:text-blue-500 transition-colors cursor-pointer">
                 {category.name}
               </span>
-            </Link>
-          </Dropdown>
-        ))}
-      </div> */}
-      <div className="relative flex justify-between px-4 py-3 bg-white border-b">
-        {categories.map((category) => (
-          <div key={category.name} className="group">
-            <Link href={`/${category.name.toLowerCase()}`}>
-              <span className="text-sm font-semibold text-gray-700 hover:text-blue-500 transition-colors cursor-pointer">
-                {category.name}
-              </span>
-            </Link>
-            <div className="absolute left-0 right-0 top-full w-full bg-black text-white py-2 hidden group-hover:block z-50">
-              <ul className="flex justify-between px-4 max-w-screen-xl mx-auto">
-                {category.subCategories?.map((sub, index) => (
-                  <li key={index} className="px-2">
-                    <Link
-                      href={`/${category.name.toLowerCase()}/${sub.toLowerCase()}`}
-                    >
-                      <span className="text-sm hover:text-blue-500">{sub}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </Tooltip>
           </div>
         ))}
       </div>

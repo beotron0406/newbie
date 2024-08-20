@@ -39,7 +39,7 @@ const Slideshows: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto h-[400px] overflow-hidden rounded-lg">
+    <div className="relative w-full max-w-6xl mx-auto h-[400px] overflow-hidden ">
       <div 
         className="w-full h-full bg-cover bg-center transition-all duration-500 ease-in-out"
         style={{ backgroundImage: `url(${slides[currentSlide].imageUrl})` }}
