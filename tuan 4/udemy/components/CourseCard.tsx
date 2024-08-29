@@ -34,7 +34,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
       <h3 className="font-semibold text-lg mb-2 text-gray-900 break-words">
         {title}
         {isBestSeller && (
-          <span className="block mt-1 w-24 bg-yellow-400 text-xs px-2 py-0.5 rounded text-gray-800 font-medium">
+          <span className="block mt-1 w-24 bg-yellow-200 text-xs px-2 py-0.5  text-gray-800 font-medium">
             Bán chạy nhất
           </span>
         )}
@@ -84,7 +84,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </div>
           <h2 className="font-bold text-sm leading-tight mb-1">{title}</h2>
           {isBestSeller && (
-            <span className="absolute bottom-2 right-2 bg-yellow-400 text-xs px-2 py-0.5 rounded text-gray-800 font-medium">
+            <span className="absolute bottom-2 right-2 bg-yellow-200 text-xs px-2 py-0.5  text-gray-800 font-medium">
               Bán chạy nhất
             </span>
           )}

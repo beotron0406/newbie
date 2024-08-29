@@ -25,40 +25,40 @@ const CourseCard: React.FC<CourseCardProps> = ({
   const formattedPrice = new Intl.NumberFormat("vi-VN").format(price);
 
   return (
-    <Card className="w-ful border-white cursor-pointer ">
-      <div className="flex items-start space-x-3">
-        <div className="w-10 h-10 flex-shrink-0">
+    <Card className="w-full border border-white cursor-pointer p-1 relative">
+      <div className="flex items-start space-x-4">
+        <div className="w-16 h-16 flex-shrink-0">
           <Image
             src={imageUrl}
             alt={title}
-            width={40}
-            height={40}
-            className="rounded-sm object-cover"
+            width={64}
+            height={64}
+            className="w-full h-full object-cover "
           />
         </div>
         <div className="flex-grow min-w-0">
-          <h3 className="text-sm font-semibold mb-1 truncate">{title}</h3>
-          <p className="text-xs text-gray-500 mb-1 truncate">{author}</p>
+          <h2 className="font-bold text-sm leading-tight mb-1">{title}</h2>
+          <p className="text-sm text-gray-600 mb-1 truncate">{author}</p>
           <div className="flex items-center mb-1">
-            <span className="text-gray-800 font-bold text-sm mr-1">
+            <span className="text-yellow-600 font-bold text-base mr-1">
               {rating.toFixed(1)}
             </span>
             <Rate
               allowHalf
               disabled
               defaultValue={rating}
-              className="text-amber-600 text-xs"
+              className="text-amber-500 text-xs"
             />
-            <span className="text-xs text-gray-500 ml-1">({reviewCount})</span>
+            <span className="text-sm text-gray-600 ml-2">({reviewCount})</span>
           </div>
-          <p className="text-sm font-bold">₫{formattedPrice}</p>
+          <p className="text-lg font-bold text-gray-600">₫{formattedPrice}</p>
         </div>
-        {isBestSeller && (
-          <span className="absolute bottom-2 right-2 bg-yellow-400 text-xs px-2 py-0.5 rounded text-gray-800 font-medium">
-            Bán chạy nhất
-          </span>
-        )}
       </div>
+      {isBestSeller && (
+        <span className="absolute bottom-2 left bg-yellow-200 text-xs px-2 py-0.5 text-gray-800 font-medium">
+          Bán chạy nhất
+        </span>
+      )}
     </Card>
   );
 };
